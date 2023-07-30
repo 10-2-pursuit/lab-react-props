@@ -6,7 +6,7 @@ export default function RecentDonations({ donationsData }) {
         {donationsData.map((donation) => (
           <li>
             <span>
-              {donation.name} donated {donation.amount}
+              {donation.name} donated ${donation.amount}
             </span>
             {donation.caption}
           </li>
