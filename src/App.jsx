@@ -37,6 +37,10 @@ const donations = [
 ];
 
 function App() {
+  const totalAmount = (props) => {
+    console.log(props.donations)
+    console.log(props.name)
+  } 
   return (
     <>
       <TopBar />
