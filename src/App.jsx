@@ -42,7 +42,7 @@ function App() {
       <TopBar />
       <main className="container">
         <section className="sidebar">{/* Recent Donations */}</section>
-        <section className="">
+        <section className="progress">
           {/* Progress */}
           {/* Donation Form */}
         </section>
