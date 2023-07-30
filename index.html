@@ -9,5 +9,52 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
+    <section className="donation">
+      <h3>You could be donation #1! <span
+      class="secondary"></span></h3>
+      <form>
+        <label htmlFor="name"
+        >Name<input
+      id="name"
+    name="name"
+    type="text"
+    placeholder="Enter Name..."/>
+  </label>
+    <label htmlFor="caption"
+    >Caption<input
+        id="caption"
+        name="caption"
+        type="text"
+        placeholder="Thank You!"/></label
+    ><label htmlFor="amount"
+    >Amount<input
+        id="amount"
+        name="amount"
+        type="number"
+        placeholder="0"/>
+      </label>
+    <button>Donate!</button>
+      </form>
+    </section>
+
+    <section className="progress">
+      <h2>
+        Raised<span className="secondary"> $335 </span> of
+        <span className="secondary"> $1000 </span>
+      </h2>
+    </section>
+
+    <section>
+      <h2>Recent Donations</h2>
+      <ul>
+
+        <li><span>  Jo donated $25  </span> You really need this. Really. </li>
+        <li><span>  Rami donated $10  </span> Here, take a break from work! </li>
+        <li><span>  Michelle donated $20  </span> LOL! You are too funny. Happy to do this for you. :) </li>
+        <li><span>  Melinda donated $5  </span> Have fun! </li>
+        <li><span>  Sam donated $30  </span> Come visit me in Miami! </li>
+
+      </ul>
+    </section>
   </body>
 </html>
