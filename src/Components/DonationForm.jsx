@@ -1,12 +1,11 @@
 import React from "react";
 
-
-
-const DonationForm = () => {
+const DonationForm = (props) => {
+  console.log(props);
   return (
     <div>
       <section className="donation">
-  <h3>You could be donation <span class="secondary">#1!</span></h3>
+  <h3>You could be donation <span class="secondary">{"#" + (props.donationsData.length + 1)}!</span></h3>
   <form>
     <label htmlFor="name"
       >Name<input
@@ -33,4 +32,4 @@ const DonationForm = () => {
   );
 }
 
-export default DonationForm
+export default DonationForm;
