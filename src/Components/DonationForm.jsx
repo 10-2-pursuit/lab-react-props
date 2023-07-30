@@ -1,8 +1,10 @@
-export default function DonationForm() {
+const DonationForm = ({ donations }) => {
+  console.log(donations);
   return (
     <section className="donation">
       <h3>
-        You could be donation <span class="secondary">#1!</span>
+        You could be donation
+        <span className="secondary"> #{donations.length + 1}!</span>
       </h3>
       <form>
         <label htmlFor="name">
@@ -26,4 +28,6 @@ export default function DonationForm() {
       </form>
     </section>
   );
-}
+};
+
+export default DonationForm;
