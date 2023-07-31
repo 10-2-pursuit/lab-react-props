@@ -46,13 +46,16 @@ function App() {
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar"><RecentDonations /></section>
+        <section className="sidebar">
+          <RecentDonations 
+          donationsData = {donations} /> 
+        </section>
         <section className="">
         <Progress 
         donationsData = {donations}
         targetNumber = {targetAmount} />
-        <DonationForm 
-      donationsData = {donations}
+          <DonationForm 
+          donationsData = {donations}
         />
         </section>
       </main>
