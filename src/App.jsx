@@ -1,9 +1,13 @@
 import React from "react";
 import TopBar from "./Components/TopBar";
+import DonationForm from "./Components/DonationForm";
+import Progress from "./Components/Progress";
+import RecentDonations from "./Components/RecentDonations";
 import "./App.css";
+import { useState } from "react";
 
 const targetAmount = 1000;
-const donations = [
+export const donations = [
   {
     amount: 250,
     caption: "You really need this. Really.",
@@ -37,14 +41,18 @@ const donations = [
 ];
 
 function App() {
+  const [donationList, setDonationList] = useState(donations);
+
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
+        <section className="sidebar">{/* Recent Donations */}<RecentDonations donations={donationList}/></section>
         <section className="">
           {/* Progress */}
+          <Progress donations={donationList}/>
           {/* Donation Form */}
+          <DonationForm donations={donationList} setDonations={setDonationList}/>
         </section>
       </main>
     </>
