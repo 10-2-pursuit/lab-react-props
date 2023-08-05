@@ -1,11 +1,29 @@
-import { donations } from "../App";
+//import { donations } from "../App";
 
-export default function DonationForm() {
+export default function DonationForm(props) {
+  function addDonation(){
+    const name = document.getElementById('name');
+    const amount = document.getElementById('amount');
+    const caption = document.getElementById('caption');
+    const tempObj = {
+      name: name.value,
+      amount: Number(amount.value),
+      caption: caption.value,
+      id:props.donations.length,
+    };
+    props.setDonations([...props.donations,tempObj]);
+  }
+
+  function submitHandler(e){
+    e.preventDefault();
+    addDonation();
+  }
+
   return (
     <>
       <section className="donation">
-      <h3>You could be donation <span class="secondary">#{ donations.length + 1 }!</span></h3>
-      <form>
+      <h3>You could be donation <span class="secondary">#{ props.donations.length + 1 }!</span></h3>
+      <form onSubmit={e=>submitHandler(e)}>
         <label htmlFor="name" //in the React..
           >Name<input
               id="name"

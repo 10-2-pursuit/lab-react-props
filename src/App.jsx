@@ -4,6 +4,7 @@ import DonationForm from "./Components/DonationForm";
 import Progress from "./Components/Progress";
 import RecentDonations from "./Components/RecentDonations";
 import "./App.css";
+import { useState } from "react";
 
 const targetAmount = 1000;
 export const donations = [
@@ -40,16 +41,18 @@ export const donations = [
 ];
 
 function App() {
+  const [donationList, setDonationList] = useState(donations);
+
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}<RecentDonations /></section>
+        <section className="sidebar">{/* Recent Donations */}<RecentDonations donations={donationList}/></section>
         <section className="">
           {/* Progress */}
-          <Progress />
+          <Progress donations={donationList}/>
           {/* Donation Form */}
-          <DonationForm />
+          <DonationForm donations={donationList} setDonations={setDonationList}/>
         </section>
       </main>
     </>
