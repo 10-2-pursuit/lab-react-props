@@ -38,7 +38,7 @@ Pass props through multiple components to build a mockup of a "FundMe"-type webs
 
 1. Deploy this application to Netlify and add the link to your netlify site below:
 
-- [MY LIVE SITE URL]()
+- [React Props](https://shimmering-crumble-60427e.netlify.app/)
 
 ## Instructions
 

@@ -50,6 +50,7 @@ header p {
   display: grid;
   gap: 25px;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr x auto;
   margin: 25px auto;
   width: 60%;
 }
@@ -81,7 +82,8 @@ header p {
 
 /* Progress */
 .progress {
-  margin-bottom: 25px;
+  height: auto;
+  margin-bottom: 70px;
 }
 
 .secondary {
@@ -89,13 +91,19 @@ header p {
 }
 
 /* Donation Form */
-.donation input[type="text"],
-.donation input[type="number"] {
+.donation label,
+.donation input #name,
+.donation input #caption,
+.donation input #amount,
+.donation button {
   display: block;
   margin: 10px 0;
   padding: 5px;
 }
 
+.donation label {
+  font-weight: bold;
+}
 .donation input[type="submit"],
 .donation button {
   background: var(--primary);
