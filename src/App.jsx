@@ -45,10 +45,10 @@ const donations = [
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar"> <RecentDonations /></section>
-        <section className="">
-          <Progress />
-          <DonationForm />
+        <section className="sidebar"> <RecentDonations donations={donations} /></section>
+        <section className="progress-donations">
+          <Progress donations={donations}/>
+          <DonationForm donations={donations}/>
         </section>
       </main>
     </>
