@@ -1,7 +1,8 @@
 import React from "react";
 import TopBar from "./Components/TopBar";
 import "./App.css";
-
+import Progress from "./Components/Progress";
+import RecentDonations from "./Components/RecentDonations";
 const targetAmount = 1000;
 const donations = [
   {
@@ -36,14 +37,31 @@ const donations = [
   },
 ];
 
+
+const initialValue= 0;
+// const sumWithInitial = array1.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue,
+// );
+
+
+
 function App() {
+  const totalDonations= donations.map(donation => donation.amount).reduce((acc, currentValue) => acc+ currentValue, initialValue,)
+
+  //console.log(totalDonations)
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
+        <section className="sidebar">{/* Recent Donations */}
+        <RecentDonations donations = {donations}/>
+        </section>
         <section className="">
           {/* Progress */}
+          <Progress 
+        totalDonations = {totalDonations}
+          targetAmount= {targetAmount}/>
           {/* Donation Form */}
         </section>
       </main>
